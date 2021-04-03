@@ -16,8 +16,7 @@ function getFreqency(string){
 
 var validPasswords = 0;
 var nonValidPasswords = 0;
-var validPasswords2 = 0;
-var nonValidPasswords2 = 0;
+
 pain = pain.toString().replaceAll(',', " ").split(" ");
 console.log(pain);
 var temp = 0;
@@ -32,5 +31,11 @@ for(var i = 0;i < agony.length; i++){
 console.log(validPasswords);
 console.log(nonValidPasswords);
 //question 2 727
-
-
+var goodPasswords2 = [];
+for(let i = 0; i < passwords.length; i++){
+    if((passwords[i][rules[i][0] - 1] == rules[i][2] || passwords[i][rules[i][1] - 1] == rules[i][2]) && !(passwords[i][rules[i][0] - 1] == rules[i][2] && passwords[i][rules[i][1] - 1] == rules[i][2])){
+        //goodPasswords2++;
+        goodPasswords2.push(passwords[i]);
+    }
+}
+console.log(goodPasswords2.length);
